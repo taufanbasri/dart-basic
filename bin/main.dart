@@ -1,6 +1,8 @@
 import 'dart:io';
 
 void main(List<String> arguments) {
-  var input = stdin.readLineSync();
-  print('Hello world: $input!');
+  String input = stdin.readLineSync();
+  int number = int.tryParse(input);
+
+  print(number + 10);
 }
