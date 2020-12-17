@@ -1,10 +1,14 @@
 import 'dart:io';
 
 void main(List<String> arguments) {
-  int i = 0;
+  double panjang, lebar;
 
-  do {
-    print(i);
-    i++;
-  } while (i < 5);
+  panjang = double.tryParse(stdin.readLineSync());
+  lebar = double.tryParse(stdin.readLineSync());
+
+  print(luas_segiempat(panjang, lebar));
+}
+
+double luas_segiempat(double panjang, double lebar) {
+  return panjang * lebar;
 }
