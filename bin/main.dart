@@ -4,13 +4,11 @@ void main(List<String> arguments) {
   int number = int.tryParse(stdin.readLineSync());
   String output;
 
-  if (number > 0) {
-    output = 'positif';
-  } else if (number < 0) {
-    output = 'negativ';
-  } else {
-    output = 'bilangan 0 atau karakter';
-  }
+  output = (number > 0)
+      ? 'positif'
+      : (number < 0)
+          ? 'negatif'
+          : 'bilangan 0';
 
   print(output);
 }
