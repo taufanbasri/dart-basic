@@ -1,14 +1,24 @@
 import 'dart:io';
 
 void main(List<String> arguments) {
-  double panjang, lebar;
-
-  panjang = double.tryParse(stdin.readLineSync());
-  lebar = double.tryParse(stdin.readLineSync());
-
-  print(luas_segiempat(panjang, lebar));
+  print(sayNameParameter('taufan', 'oke bro', to: 'azizah', appName: 'wa'));
+  print(sayPositionalParameter('taufan', 'oke bro', 'azizah', 'wa'));
 }
 
-double luas_segiempat(double panjang, double lebar) {
-  return panjang * lebar;
+String sayNameParameter(String from, String message,
+    {String to, String appName}) {
+  return from +
+      " say " +
+      message +
+      ((to != null) ? " to " + to : "") +
+      ((appName != null) ? " via " + appName : "");
+}
+
+String sayPositionalParameter(String from, String message,
+    [String to, String appName]) {
+  return from +
+      " say " +
+      message +
+      ((to != null) ? " to " + to : "") +
+      ((appName != null) ? " via " + appName : "");
 }
