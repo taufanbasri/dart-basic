@@ -4,11 +4,20 @@ void main(List<String> arguments) {
   int number = int.tryParse(stdin.readLineSync());
   String output;
 
-  output = (number > 0)
-      ? 'positif'
-      : (number < 0)
-          ? 'negatif'
-          : 'bilangan 0';
+  switch (number) {
+    case 1:
+      output = 'satu';
+      break;
+    case 2:
+      output = '2';
+      break;
+    case 3:
+      output = 'tiga';
+      break;
+    default:
+      output = 'nol atau negatif';
+      break;
+  }
 
   print(output);
 }
