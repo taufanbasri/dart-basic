@@ -8,6 +8,12 @@ void main(List<String> arguments) {
   luas = luas_segiempat;
 
   print(luas(10.0, 5.0));
+
+  print(doMathOperator(1, 2, (a, b) => a + b));
+}
+
+int doMathOperator(int number1, int number2, Function(int, int) operator) {
+  return operator(number1, number2);
 }
 
 String sayNameParameter(String from, String message,
