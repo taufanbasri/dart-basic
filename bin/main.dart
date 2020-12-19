@@ -1,30 +1,24 @@
 import 'dart:io';
 
 void main(List<String> arguments) {
-  List<int> myList = [1, 2, 3, 4, 5];
-  List<int> lists = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  PersegiPanjang kotak1, kotak2;
 
-  myList.add(10);
-  myList.addAll(lists);
-  myList.insert(1, 20);
-  myList.insertAll(2, [30, 40]);
-  myList.remove(5);
-  myList.removeLast();
-  myList.removeAt(6);
-  myList.removeRange(4, 6); // remove at index 4 until 5
-  myList.removeWhere((number) => number % 2 != 0);
-  myList.sort((a, b) => a - b);
+  kotak1 = new PersegiPanjang(); // keyword new -> opsional
+  kotak1.panjang = 3;
+  kotak1.lebar = 2;
 
-  Set<int> s;
-  s = myList.toSet(); // membuat isi list menjadi unik, tidak ada yang sama
+  kotak2 = PersegiPanjang();
+  kotak2.panjang = double.tryParse(stdin.readLineSync());
+  kotak2.lebar = double.tryParse(stdin.readLineSync());
 
-  if (myList.every((number) => number % 2 != 0)) {
-    print('semua ganjil');
-  } else {
-    print('tidak semua ganjil');
+  print(kotak1.hitungLuas());
+  print(kotak2.hitungLuas());
+}
+
+class PersegiPanjang {
+  double panjang, lebar;
+
+  double hitungLuas() {
+    return panjang * lebar;
   }
-
-  myList.forEach((list) {
-    print(list);
-  });
 }
