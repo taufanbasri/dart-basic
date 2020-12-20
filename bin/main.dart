@@ -3,7 +3,9 @@ import 'dart:io';
 import 'person.dart';
 
 void main(List<String> arguments) {
-  Person person = Person('Taufan');
+  Person personA = Person();
+  Person personB = Person(name: 'Taufan');
 
-  print(person.name);
+  print(personA.name);
+  print(personB.name);
 }
