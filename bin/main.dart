@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:first_dart_console/drink_ability_mixin.dart';
 import 'package:first_dart_console/flying_monster.dart';
 import 'package:first_dart_console/hero.dart';
 import 'package:first_dart_console/monster.dart';
@@ -18,8 +19,8 @@ void main(List<String> arguments) {
   monsters.add(MonsterUcoa());
 
   for (Monster m in monsters) {
-    if (m is FlyingMonster) {
-      print((m as FlyingMonster).fly());
+    if (m is DrinkAbilityMixin) {
+      print((m as DrinkAbilityMixin).drink());
     }
   }
 }
