@@ -1,20 +1,10 @@
 import 'dart:io';
 
-import 'package:first_dart_console/ignore_parameter.dart';
+import 'package:first_dart_console/static_keyword.dart';
 
 void main(List<String> arguments) {
-  var person = Person('Taufan', doingHobby: (String name) {
-    print('$name hobby is swimming');
-  });
+  var person = Person('Taufan', 170);
 
-  var person2 = Person('Evita', doingHobby: (_) {
-    print('Swimming in the pool');
-  });
-
-  person.takeARest();
-  person2.takeARest();
+  print(Person.maxAge);
+  print(person.age);
 }
-
-// void taufanHobby(String name) {
-//   print('$name hobby is swimming');
-// }
