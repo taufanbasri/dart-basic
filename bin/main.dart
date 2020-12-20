@@ -14,11 +14,8 @@ void main(List<String> arguments) {
   monsters.add(MonsterKecoa());
   monsters.add(MonsterUburUbur());
 
-  print((monster as MonsterUburUbur).swim());
-
   for (Monster m in monsters) {
-    if (m is MonsterUburUbur) {
-      print(m.swim());
-    }
+    print(m.move());
+    print(m.eatHuman());
   }
 }
