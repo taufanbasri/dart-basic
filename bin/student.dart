@@ -1,7 +1,7 @@
 import 'person.dart';
 
 class Student extends Person {
-  Student() : super('student baru') {
+  Student() : super(name: 'student baru') {
     print('constructor student');
   }
 }
