@@ -2,15 +2,23 @@ import 'dart:io';
 
 import 'package:first_dart_console/hero.dart';
 import 'package:first_dart_console/monster.dart';
+import 'package:first_dart_console/monster_kecoa.dart';
+import 'package:first_dart_console/monster_uburubur.dart';
 
 void main(List<String> arguments) {
-  Hero hero = Hero();
-  Monster monster = Monster();
+  Monster monster = MonsterUburUbur();
 
-  hero.healtPoint = -10;
-  monster.healtPoint = 10;
+  List<Monster> monsters = [];
 
-  print("Hero HP: " + hero.healtPoint.toString());
-  print("Monster HP: " + monster.healtPoint.toString());
-  print(hero.killMonster());
+  monsters.add(MonsterUburUbur());
+  monsters.add(MonsterKecoa());
+  monsters.add(MonsterUburUbur());
+
+  print((monster as MonsterUburUbur).swim());
+
+  for (Monster m in monsters) {
+    if (m is MonsterUburUbur) {
+      print(m.swim());
+    }
+  }
 }
