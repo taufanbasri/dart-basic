@@ -1,19 +1,16 @@
 import 'dart:io';
-import 'package:first_dart_console/persegi_panjang.dart';
+
+import 'package:first_dart_console/hero.dart';
+import 'package:first_dart_console/monster.dart';
 
 void main(List<String> arguments) {
-  PersegiPanjang kotak1, kotak2;
+  Hero hero = Hero();
+  Monster monster = Monster();
 
-  kotak1 = new PersegiPanjang(); // keyword new -> opsional
-  kotak1.setPanjang(3);
-  kotak1.lebar = -2;
+  hero.healtPoint = -10;
+  monster.healtPoint = 10;
 
-  kotak2 = PersegiPanjang();
-  kotak2.setPanjang(double.tryParse(stdin.readLineSync()));
-  kotak2.lebar = double.tryParse(stdin.readLineSync());
-
-  print(kotak1.luas);
-  print(kotak1.getPanjang());
-  print(kotak1.lebar);
-  print(kotak2.hitungLuas());
+  print("Hero HP: " + hero.healtPoint.toString());
+  print("Monster HP: " + monster.healtPoint.toString());
+  print(hero.killMonster());
 }
