@@ -6,9 +6,10 @@ void main(List<String> arguments) async {
   print('Job 1');
   print('Job 2');
 
-  await person.getDataAsync();
+  person.getDataAsync().then((_) {
+    print('Job 3 ' + person.name);
+  });
 
-  print('Job 3 ' + person.name);
   print('Job 4');
 }
 
