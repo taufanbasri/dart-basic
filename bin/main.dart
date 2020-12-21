@@ -1,10 +1,30 @@
 import 'dart:io';
 
-import 'package:first_dart_console/static_keyword.dart';
+void main(List<String> arguments) async {
+  var person = Person();
 
-void main(List<String> arguments) {
-  var person = Person('Taufan', 170);
+  print('Job 1');
+  print('Job 2');
 
-  print(Person.maxAge);
-  print(person.age);
+  await person.getDataAsync();
+
+  print('Job 3 ' + person.name);
+  print('Job 4');
+}
+
+class Person {
+  String name = 'default name';
+
+  void getData() {
+    name = 'Taufan';
+    print('get data [done]');
+  }
+
+  Future<void> getDataAsync() async {
+    await Future.delayed(
+        Duration(seconds: 3)); // untuk mengetes dengan delay 3 detik
+
+    name = 'Taufan';
+    print('get data [done]');
+  }
 }
