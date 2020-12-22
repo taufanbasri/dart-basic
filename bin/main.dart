@@ -1,13 +1,32 @@
-import 'dart:io';
-
-import 'package:first_dart_console/generic_type.dart';
-
 void main(List<String> arguments) {
-  var box1 = SecureBox<String>('Halo', '123');
-  var box2 = SecureBox<int>(123, '123');
-  var box3 = SecureBox<DateTime>(DateTime.now(), '123');
+  MonsterUcoa monster = MonsterUcoa(status: UcoaStatus.poisoned);
 
-  print(box1.getData('123').toString());
-  print(box2.getData('123').toString());
-  print(box3.getData('123').toString());
+  monster.move();
+}
+
+enum UcoaStatus { normal, poisoned, confused }
+
+class MonsterUcoa {
+  final UcoaStatus status; // 1: Normal; 2: Poisoned; 3: Confused
+
+  MonsterUcoa({this.status = UcoaStatus.normal});
+
+  void move() {
+    switch (status) {
+      case UcoaStatus.normal:
+        print('Ucoa is moving');
+        break;
+      case UcoaStatus.poisoned:
+        print('Ucoa cannot move. Ucoa is dying. Ucoa needs help.');
+        break;
+      case UcoaStatus.confused:
+        print('Ucoa cannot move. Ucoa is dying. Ucoa needs help.');
+        break;
+      default:
+    }
+  }
+
+  void eat() {
+    print('Ucoa is eating Indomie.');
+  }
 }
