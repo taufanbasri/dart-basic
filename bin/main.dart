@@ -1,31 +1,27 @@
 import 'dart:io';
 
-void main(List<String> arguments) async {
-  var person = Person();
+void main(List<String> arguments) {
+  var versiRegular = ConstClass(number: 5);
+  var versiRegular2 = ConstClass(number: 5);
 
-  print('Job 1');
-  print('Job 2');
+  print(identical(versiRegular,
+      versiRegular2)); // untuk mengecek 2 object yang berbeda, hasilnya akan false
 
-  person.getDataAsync().then((_) {
-    print('Job 3 ' + person.name);
-  });
+  var versiConst = const ConstClass(number: 5);
+  var versiConst2 = const ConstClass(number: 5);
 
-  print('Job 4');
+  print(identical(versiConst,
+      versiConst2)); // untuk mengecek 2 object yang berbeda, hasilnya akan true
 }
 
-class Person {
-  String name = 'default name';
+class RegularClass {
+  final int number;
 
-  void getData() {
-    name = 'Taufan';
-    print('get data [done]');
-  }
+  RegularClass({this.number});
+}
 
-  Future<void> getDataAsync() async {
-    await Future.delayed(
-        Duration(seconds: 3)); // untuk mengetes dengan delay 3 detik
+class ConstClass {
+  final int number;
 
-    name = 'Taufan';
-    print('get data [done]');
-  }
+  const ConstClass({this.number});
 }
