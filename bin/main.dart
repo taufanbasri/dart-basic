@@ -11,6 +11,8 @@ void main(List<String> arguments) {
     Person('Merchant', 32),
   ];
 
+  persons.sort((person1, person2) => person1.age - person2.age);
+
   persons.forEach((person) {
     print(person.role + ' - ' + person.age.toString());
   });
