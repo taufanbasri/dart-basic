@@ -1,22 +1,24 @@
-import 'package:meta/meta.dart';
-
 void main(List<String> arguments) {
-  Person person;
+  List<Person> persons = [
+    Person('Administrator', 32),
+    Person('User', 54),
+    Person('Merchant', 32),
+    Person('Administrator', 32),
+    Person('User', 54),
+    Person('Merchant', 32),
+    Person('Administrator', 32),
+    Person('User', 54),
+    Person('Merchant', 32),
+  ];
 
-  try {
-    person = Person(name: null);
-  } catch (e) {
-    print(e);
-  }
-
-  print('hello');
+  persons.forEach((person) {
+    print(person.role + ' - ' + person.age.toString());
+  });
 }
 
 class Person {
-  final String name;
+  final String role;
   final int age;
 
-  Person({@required this.name, this.age = 0}) {
-    assert(name != null, "You must give the person's name.");
-  }
+  Person(this.role, this.age);
 }
