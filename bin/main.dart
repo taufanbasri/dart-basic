@@ -1,32 +1,22 @@
+import 'package:meta/meta.dart';
+
 void main(List<String> arguments) {
-  MonsterUcoa monster = MonsterUcoa(status: UcoaStatus.poisoned)
-    ..move()
-    ..eat();
-}
+  Person person;
 
-enum UcoaStatus { normal, poisoned, confused }
-
-class MonsterUcoa {
-  final UcoaStatus status; // 1: Normal; 2: Poisoned; 3: Confused
-
-  MonsterUcoa({this.status = UcoaStatus.normal});
-
-  void move() {
-    switch (status) {
-      case UcoaStatus.normal:
-        print('Ucoa is moving');
-        break;
-      case UcoaStatus.poisoned:
-        print('Ucoa cannot move. Ucoa is dying. Ucoa needs help.');
-        break;
-      case UcoaStatus.confused:
-        print('Ucoa cannot move. Ucoa is dying. Ucoa needs help.');
-        break;
-      default:
-    }
+  try {
+    person = Person(name: null);
+  } catch (e) {
+    print(e);
   }
 
-  void eat() {
-    print('Ucoa is eating Indomie.');
+  print('hello');
+}
+
+class Person {
+  final String name;
+  final int age;
+
+  Person({@required this.name, this.age = 0}) {
+    assert(name != null, "You must give the person's name.");
   }
 }
